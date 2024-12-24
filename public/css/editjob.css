@@ -1,0 +1,376 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ced9eb;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar buttons (left section) */
+.floating-buttons {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column; /* Los botones se muestran en fila en pantallas grandes */
+}
+
+.floating-btn {
+    background-color: #b8eee8;
+    color: rgb(11, 10, 10);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.floating-btn:hover {
+    background-color: #ba9fdd;
+}
+
+/* Sidebar active button */
+.floating-btn.active {
+    background-color: #5e1db5;
+}
+
+/* Header */
+header {
+    background-color: #94b6f1;
+    color: rgb(17, 15, 15);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Form container with border */
+.form-container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 70%;  /* Deja espacio a la izquierda para los botones flotantes */
+    margin-left: 250px; /* Desplazar el contenido para dejar espacio a los botones flotantes */
+    border: 2px solid black; /* Contorno negro alrededor del formulario */
+    border-radius: 8px; /* Bordes redondeados para el contorno */
+}
+
+/* Form layout */
+.form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input fields and labels */
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #171313;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: black; /* Texto de los campos en color negro */
+    border: 1px solid black; /* Borde negro en los campos de entrada */
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 15px;
+    background-color: #8A2BE2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #bdf6f6;
+}
+
+/* Preview image container */
+#image-preview-container {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Estilo para el botón 'Ver Trabajos' */
+header a.btn {
+    position: absolute;  /* Para moverlo a la derecha */
+    right: 3px;         /* Separarlo del borde derecho */
+    background-color: #f8eaac;
+    color: rgb(11, 10, 10);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+header a.btn:hover {
+    background-color: #ba9fdd;
+}
+
+/* Opción activa de botón en la barra lateral (si es necesario) */
+.floating-btn.active {
+    background-color: #5e1db5;
+}
+
+
+#image-preview {
+    max-width: 100%;
+    max-height: 200px; /* Asegura que la imagen no se expanda más de lo que debe */
+    object-fit: contain;
+}
+
+/* Toggle button to show/hide floating buttons (only for small screens) */
+.toggle-btn {
+    background-color: #cfe2e0;
+    color: rgb(11, 10, 10);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: none; /* Se oculta por defecto */
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #e2dee8;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .floating-buttons {
+        display: none;  /* Los botones flotantes estarán ocultos por defecto en pantallas pequeñas */
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .floating-buttons.show-buttons {
+        display: flex;  /* Mostrar los botones cuando se haga clic en el menú */
+    }
+
+    .toggle-btn {/* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ced9eb;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Sidebar buttons (left section) */
+        .floating-buttons {
+            position: fixed;
+            top: 80px;  /* Separar los botones del menú hamburguesa */
+            left: 20px;
+            display: flex;
+            flex-direction: column; /* Los botones estarán en columna uno debajo del otro */
+            gap: 10px;
+            display: none; /* Ocultos por defecto en pantallas pequeñas */
+        }
+        
+        .floating-btn {
+            background-color: #87f0e4;
+            color: rgb(11, 10, 10);
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .floating-btn:hover {
+            background-color: #ba9fdd;
+        }
+        
+        /* Sidebar active button */
+        .floating-btn.active {
+            background-color: #5e1db5;
+        }
+        
+        /* Header */
+        header {
+            background-color: #94b6f1;
+            color: rgb(17, 15, 15);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        /* Form container */
+        .form-container {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            width: 70%;  /* Deja espacio a la izquierda para los botones flotantes */
+            margin-left: 250px; /* Desplazar el contenido para dejar espacio a los botones flotantes */
+            border: 2px solid black; /* Contorno negro alrededor del formulario */
+            border-radius: 8px; /* Bordes redondeados para el contorno */
+        }
+        
+        /* Form layout */
+        .form-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+        
+        .form-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Input fields and labels */
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #150909;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            color: black; /* Texto de los campos en color negro */
+            border: 1px solid black; /* Borde negro en los campos de entrada */
+        }
+        
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            padding: 15px;
+            background-color: #8A2BE2;
+            color: #f6f0f0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #b0eee9;
+        }
+        
+        /* Preview image container */
+        #image-preview-container {
+            display: none;
+            margin-top: 10px;
+        }
+        
+        #image-preview {
+            max-width: 100%;
+            max-height: 200px; /* Asegura que la imagen no se expanda más de lo que debe */
+            object-fit: contain;
+        }
+        
+        /* Toggle button to show/hide floating buttons (only for small screens) */
+        .toggle-btn {
+            background-color: #87f0e4;
+            color: rgb(11, 10, 10);
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: none; /* Se oculta por defecto */
+            cursor: pointer;
+        }
+        
+        .toggle-btn:hover {
+            background-color: #ba9fdd;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            /* Hacer visibles los botones flotantes solo cuando se activa el menú hamburguesa */
+            .floating-buttons {
+                display: none;  /* Los botones flotantes estarán ocultos por defecto en pantallas pequeñas */
+                position: absolute;
+                top: 80px;  /* Mantener los botones separados del menú hamburguesa */
+                left: 20px;
+                gap: 10px;
+            }
+        
+            .floating-buttons.show-buttons {
+                display: flex;
+            }
+        
+            .toggle-btn {
+                display: block; /* Mostrar el botón hamburguesa */
+            }
+        
+            .form-container {
+                width: 100%;
+                margin-left: 0; /* Quitar el margen izquierdo */
+            }
+        }
+        
+        
+        display: block;  /* Mostrar el botón hamburguesa en pantallas pequeñas */
+    }
+
+    .form-container {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .form-columns {
+        grid-template-columns: 1fr; /* Cambiar a una columna en pantallas pequeñas */
+    }
+}

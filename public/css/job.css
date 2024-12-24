@@ -1,0 +1,189 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7eeea;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1c038e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Barra flotante */
+.floating-bar {
+    position: sticky;
+    top: 0;
+    background-color: rgb(252, 249, 249);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu.hidden {
+    display: none;
+}
+
+.floating-bar .btn {
+    background-color: #c2f6cd;
+    color: rgb(14, 13, 13);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.floating-bar .btn:hover {
+    background-color: #0056b3;
+}
+
+.floating-bar .icon-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Menú desplegable */
+.menu.hidden {
+    display: flex;
+    flex-direction: column;
+    background-color: #dcebda;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    right: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+.menu.hidden .btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.menu.hidden .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botón para cerrar el menú */
+.close-menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* Job date styling */
+.job-date {
+    font-size: 12px;
+    color: #777;
+    margin-left: 5px;
+}
+
+/* Contenedor para el selector de orden y búsqueda */
+.search-order-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-form, .order-form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.search-input, #order {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.search-form button, .order-form .btn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #c2f6cd;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-form button:hover, .order-form .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    } 
+   
+    
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.job-card {
+    background-color: rgb(235, 241, 249);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.job-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.job-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+

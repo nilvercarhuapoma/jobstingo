@@ -1,0 +1,149 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+header .btn:hover {
+    background-color: #218838;
+}
+
+/* Estilo para la lista de trabajos */
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.job-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.job-details h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.job-details p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.job-details a {
+    color: #25d366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.job-details a:hover {
+    text-decoration: underline;
+}
+
+/* Imagen del trabajo */
+.job-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Limita el ancho máximo */
+    max-height: 300px; /* Limita la altura máxima */
+    object-fit: cover; /* Asegura que la imagen se recorte manteniendo las proporciones */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para las acciones (editar, eliminar) */
+.job-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1; /* Asegura que los íconos no se superpongan con el contenido */
+}
+
+.job-actions a img,
+.job-actions button img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.job-actions a img:hover,
+.job-actions button img:hover {
+    transform: scale(1.1);
+}
+
+.job-actions button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.delete-form {
+    margin: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .job-list {
+        grid-template-columns: 1fr;
+    }
+
+    .job-card {
+        padding: 15px;
+    }
+
+    .job-image {
+        max-width: 100%; /* La imagen ocupará todo el ancho disponible en pantallas pequeñas */
+        max-height: 200px; /* Ajuste de la altura en dispositivos más pequeños */
+    }
+
+    /* Ajustar los íconos de editar/eliminar para pantallas pequeñas */
+    .job-actions {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        flex-direction: row;
+        gap: 10px;
+    }
+}

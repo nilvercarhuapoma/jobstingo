@@ -1,0 +1,212 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #acc8f7;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Deja espacio para la barra fija */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #b3d9f7; /* Barra celeste clara */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f3c6c6;
+    text-decoration: none;
+    display: block;
+    margin-left: 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 30px; /* Más espacio entre botones */
+    justify-content: center;
+}
+
+.navbar-nav .nav-link {
+    color: #c2f9f5;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    border: 2px solid #ffeb3b; /* Borde amarillo claro */
+    background-color: #0099cc; /* Fondo azul para los botones */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #a8f2ff;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #b19cd9;
+    color: #000;
+}
+
+/* Custom button for "Crear trabajo" */
+.navbar-nav .nav-link.create-job {
+    background-color: #8A2BE2; /* Fondo morado */
+    color: #fff;
+}
+
+/* Button Styling */
+button {
+    padding: 15px;
+    background-color: #8A2BE2;
+    color: #e5bfbf;
+    border: 2px solid #ffeb3b; /* Borde amarillo claro */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #bdf6f6;
+    border-color: #5e1db5;
+}
+
+/* Hamburger Menu */
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+}
+
+.offcanvas {
+    background-color: #c4dbf4;
+}
+
+.offcanvas-header {
+    background-color: #0909f5;
+    color: rgb(252, 244, 244);
+}
+
+.offcanvas-body .nav-link {
+    color: rgb(10, 0, 0);
+    font-size: 16px;
+    padding: 12px 18px;
+    border: 2px solid #161615; /* Borde amarillo claro */
+    border-radius: 5px;
+    text-align: center;
+}
+
+.offcanvas-body .nav-link:hover {
+    background-color: #15a05b;
+}
+
+/* Form Title Styles */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Form Container */
+.form-container {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 50px; /* Espacio adicional abajo */
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #f3f3c9;
+    width: 80%;
+    margin: 50px auto 0 auto;
+}
+
+/* Form Layout */
+.form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form Input Styles */
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #171313;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #e1f7d5;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Preview Image Container */
+#image-preview-container {
+    display: none;
+    margin-top: 10px;
+}
+
+#image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-nav {
+        display: block;
+        gap: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar-nav .nav-link {
+        background-color: #007bff;
+        color: rgb(58, 14, 14);
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #0056b3;
+    }
+}
